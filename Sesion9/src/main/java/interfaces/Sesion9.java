@@ -1,10 +1,9 @@
 package interfaces;
 
-import models.students;
+import models.Student;
 
 public interface Sesion9 {
-    public boolean store(Object object);
+    boolean store(Object object);
 
-    public void findByname(String name, students[] students);
-
+    void findByname(String name, Student[] students);
 }

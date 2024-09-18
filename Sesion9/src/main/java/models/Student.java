@@ -2,21 +2,22 @@ package models;
 
 import java.util.Objects;
 
-public class students {
+public class Student {
     private String name;
-    private int  age;
+    private int age;
     private String email;
 
-    public students(String name, int age, String email) {
+    // Constructor con parámetros
+    public Student(String name, int age, String email) {
         this.name = name;
         this.age = age;
         this.email = email;
     }
 
-    public students() {
+    // Constructor vacío
+    public Student() {}
 
-    }
-
+    // Getters y Setters
     public int getAge() {
         return age;
     }
@@ -41,29 +42,28 @@ public class students {
         this.email = email;
     }
 
+    // toString para una representación legible
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("students{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append(", email='").append(email).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
     }
 
+    // Equals y hashCode para comparar objetos correctamente
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        students students = (students) o;
-        return age == students.age && Objects.equals(name, students.name) && Objects.equals(email, students.email);
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name) && Objects.equals(email, student.email);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name, age, email);
     }
-
-    public void add(students student) {
-    }
 }
+
